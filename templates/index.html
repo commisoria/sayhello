@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Say Hello</title>
+    <link rel="sytlesheet" href="{{url_for('static', filename='templates/main.css')}}">
+</head>
+<body>
+    <img src="/static/indir.png">
+    <br>
+    <form action="greet" method="post">
+        {% for message in get_flashed_messages() %}
+            <p> {{message}} </p>
+        {% endfor %}
+        <p> what's your name ? </p>
+        <br>
+        <input type="text" name="name_input">,
+        <br>
+        <input type="submit" value="GREET" id="greet">
+
+    </form>
+
+</body>
+</html>
